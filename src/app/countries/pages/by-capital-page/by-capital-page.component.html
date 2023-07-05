@@ -1,0 +1,33 @@
+<h2>Por Capital</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <!-- Searchbox -->
+    <shared-search-box
+      (onValue)="searchByCapitalPage($event)"
+      placeholder="Madrid"
+    ></shared-search-box>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <!-- Resultados -->
+    <hr />
+    <countries-table [countries]="countries"></countries-table>
+  </div>
+
+  <h5 *ngIf="countries.length === 0" class="mt-2">Sugerencias</h5>
+  <ul *ngIf="countries.length === 0">
+    <countries-suggested-capital
+      *ngFor="let item of suggestedCountries"
+      [capital]="item"
+      (click)="searchByCapitalPage(item)"
+    ></countries-suggested-capital>
+  </ul>
+
+  <div *ngIf="countries.length !== 0">
+    <button (click)="goBack()" class="btn btn-primary">Volver</button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<input
+  [placeholder]="placeholder"
+  class="form-control"
+  #txtInput
+  (keyup.enter)="emitValue(txtInput.value)"
+/>
+
+<!--
+  NOTAS:
+  - Cuando se produce el evento al levantar la techa ENTER activamos el método(funcion) "emitValue", el cual
+  llama al evento creado por nosotros onValue() que a su vez es escuchado por el componente padre y este activa
+  la función "searchByCapitalPage()", la cual recibe el evento, o más bien el "txtInput.value"
+ -->

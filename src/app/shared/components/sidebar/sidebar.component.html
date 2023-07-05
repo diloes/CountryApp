@@ -1,0 +1,52 @@
+<h2>Países</h2>
+<hr />
+
+<ul class="list-group">
+  <!-- <li
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item"
+  >
+    Home
+  </li>
+  <li routerLink="about" routerLinkActive="active" class="list-group-item">
+    Sobre nosotros
+  </li>
+
+  <li routerLink="contact" routerLinkActive="active" class="list-group-item">
+    Contacto
+  </li> -->
+
+  <li
+    routerLink="countries/by-capital"
+    routerLinkActive="active"
+    class="list-group-item"
+  >
+    Por capital
+  </li>
+
+  <li
+    routerLink="countries/by-country"
+    routerLinkActive="active"
+    class="list-group-item"
+  >
+    Por país
+  </li>
+
+  <li
+    routerLink="countries/by-region"
+    routerLinkActive="active"
+    class="list-group-item"
+  >
+    Por continente
+  </li>
+</ul>
+
+<!--
+  NOTAS:
+  - routerLinkActive="active" -> Cuando esté activo el ese link le ponemos la clase
+  "active" de bootstrap.
+  - [routerLinkActiveOptions]="{ exact: true }" -> para que coincida exactamente
+  con el path.
+-->
