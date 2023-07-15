@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/countries';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'countries-by-capital-page',
@@ -10,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class ByCapitalPageComponent {
   public countries: Country[] = [];
-  public suggestedCountries: string[] = [
+  public suggestedCapitals: string[] = [
     'madrid',
     'rome',
     'lisbon',

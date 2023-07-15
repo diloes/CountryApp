@@ -9,6 +9,13 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCountryPageComponent {
   public countries: Country[] = [];
+  public suggestedCountries: string[] = [
+    'Spain',
+    'Croatia',
+    'Denmark',
+    'France',
+    'Turkey',
+  ];
 
   constructor(private countriesService: CountriesService) {}
 
@@ -18,5 +25,9 @@ export class ByCountryPageComponent {
       .subscribe((countriesResponse) => {
         this.countries = countriesResponse;
       });
+  }
+
+  goBack(): void {
+    this.countries = [];
   }
 }
