@@ -22,7 +22,7 @@
   <ul *ngIf="countries.length === 0">
     <countries-suggested-countries
       *ngFor="let item of suggestedRegions"
-      [country]="item"
+      [region]="item"
       (click)="searchByRegionPage(item)"
     ></countries-suggested-countries>
   </ul>

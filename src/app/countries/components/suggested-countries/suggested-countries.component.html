@@ -1,3 +1,7 @@
-<li class="badge bg-primary m-1 fs-6">
+<li *ngIf="country" class="badge bg-primary m-1 fs-6">
   {{ country | titlecase }}
+</li>
+
+<li *ngIf="region" class="badge bg-primary m-1 fs-6">
+  {{ region | titlecase }}
 </li>
