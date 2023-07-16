@@ -17,7 +17,6 @@ export class ByCapitalPageComponent {
     'sucre',
     'brasilia',
     'ottawa',
-    'lagos',
   ];
 
   constructor(private countriesService: CountriesService) {}

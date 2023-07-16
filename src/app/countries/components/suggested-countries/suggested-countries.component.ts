@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 export class SuggestedCountriesComponent {
   @Input()
   public country!: string;
+
+  @Input()
+  public region!: string;
 }

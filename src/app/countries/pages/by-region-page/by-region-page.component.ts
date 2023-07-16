@@ -9,6 +9,14 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByRegionPageComponent {
   public countries: Country[] = [];
+  public suggestedRegions: string[] = [
+    'europe',
+    'asia',
+    'africa',
+    'north America',
+    'oceania',
+    'antarctica',
+  ];
 
   constructor(private countriesService: CountriesService) {}
 
@@ -18,5 +26,9 @@ export class ByRegionPageComponent {
       .subscribe((countriesResponse) => {
         this.countries = countriesResponse;
       });
+  }
+
+  goBack(): void {
+    this.countries = [];
   }
 }
