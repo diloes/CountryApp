@@ -9,6 +9,7 @@ import { Country } from '../../interfaces/countries';
 })
 export class ByCapitalPageComponent {
   public countries: Country[] = [];
+  public isLoading: boolean = false;
   public suggestedCapitals: string[] = [
     'madrid',
     'rome',
@@ -22,10 +23,13 @@ export class ByCapitalPageComponent {
   constructor(private countriesService: CountriesService) {}
 
   searchByCapitalPage(term: string): void {
+    this.isLoading = true;
+
     this.countriesService
       .searchCapitalService(term)
       .subscribe((countriesResponse) => {
         this.countries = countriesResponse;
+        this.isLoading = false;
       });
   }
 
