@@ -8,6 +8,7 @@
       class="btn mx-2"
       *ngFor="let region of regions"
       (click)="searchByRegionPage(region)"
+      [ngClass]="{ 'btn-outline-primary': selectedRegion === region }"
     >
       {{ region }}
     </button>

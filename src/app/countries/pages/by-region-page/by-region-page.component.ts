@@ -18,10 +18,13 @@ export class ByRegionPageComponent {
     'Europe',
     'Oceania',
   ];
+  public selectedRegion?: Region;
 
   constructor(private countriesService: CountriesService) {}
 
-  searchByRegionPage(region: string): void {
+  searchByRegionPage(region: Region): void {
+    this.selectedRegion = region;
+
     this.countriesService
       .searchRegionService(region)
       .subscribe((countriesResponse) => {
