@@ -2,12 +2,15 @@
 <hr />
 
 <div class="row">
-  <div class="col">
+  <div class="col text-center">
     <!-- Searchbox -->
-    <shared-search-box
-      (onDebounce)="searchByRegionPage($event)"
-      placeholder="Europe"
-    ></shared-search-box>
+    <button
+      class="btn mx-2"
+      *ngFor="let region of regions"
+      (click)="searchByRegionPage(region)"
+    >
+      {{ region }}
+    </button>
   </div>
 </div>
 
@@ -17,15 +20,6 @@
     <hr />
     <countries-table [countries]="countries"></countries-table>
   </div>
-
-  <h5 *ngIf="countries.length === 0" class="mt-2">Sugerencias</h5>
-  <ul *ngIf="countries.length === 0">
-    <countries-suggested-countries
-      *ngFor="let item of suggestedRegions"
-      [region]="item"
-      (click)="searchByRegionPage(item)"
-    ></countries-suggested-countries>
-  </ul>
 
   <div *ngIf="countries.length !== 0">
     <button (click)="goBack()" class="btn btn-primary">Volver</button>
