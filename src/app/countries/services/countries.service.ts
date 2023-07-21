@@ -39,7 +39,6 @@ export class CountriesService {
     );
   }
 
-  // Petición http
   searchCapitalService(term: string): Observable<Country[]> {
     const url = `${this.apiUrl}/capital/${term}`;
     return this.getCountriesRequest(url).pipe(
